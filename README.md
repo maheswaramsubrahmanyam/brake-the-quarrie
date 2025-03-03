@@ -53,6 +53,101 @@ CREATE TABLE Submissions (
     FOREIGN KEY (AssignmentID) REFERENCES Assignments(AssignmentID),
     FOREIGN KEY (StudentID) REFERENCES Students(StudentID)
 );
+
+
+-- Insert data into Students
+INSERT INTO Students (StudentID, Name, Age, Gender, Email, EnrollmentDate) VALUES
+(1, 'John Doe', 18, 'Male', 'john.doe@example.com', '2023-08-01'),
+(2, 'Alice Smith', 20, 'Female', 'alice.smith@example.com', '2022-07-15'),
+(3, 'Bob Johnson', 19, 'Male', 'bob.johnson@example.com', '2023-01-10'),
+(4, 'Emma Brown', 21, 'Female', 'emma.brown@example.com', '2021-09-05'),
+(5, 'Michael Davis', 22, 'Male', 'michael.davis@example.com', '2020-06-20'),
+(6, 'Sophia Wilson', 18, 'Female', 'sophia.wilson@example.com', '2023-09-12'),
+(7, 'James Lee', 19, 'Male', 'james.lee@example.com', '2022-05-30'),
+(8, 'Olivia Martinez', 20, 'Female', 'olivia.martinez@example.com', '2021-11-18'),
+(9, 'William Taylor', 21, 'Male', 'william.taylor@example.com', '2020-04-22'),
+(10, 'Emily White', 19, 'Female', 'emily.white@example.com', '2023-07-09');
+
+-- Insert data into Courses
+INSERT INTO Courses (CourseID, CourseName, Credits) VALUES
+(101, 'Mathematics', 4),
+(102, 'Physics', 3),
+(103, 'Computer Science', 5),
+(104, 'History', 3),
+(105, 'English Literature', 4),
+(106, 'Data Science', 6),
+(107, 'Software Engineering', 5),
+(108, 'Artificial Intelligence', 6),
+(109, 'Cyber Security', 5),
+(110, 'Web Development', 4);
+
+-- Insert data into Enrollments
+INSERT INTO Enrollments (EnrollmentID, StudentID, CourseID, Semester, Grade) VALUES
+(1, 1, 101, 'Fall 2023', 'A'),
+(2, 2, 102, 'Spring 2023', 'B'),
+(3, 3, 103, 'Fall 2023', 'C'),
+(4, 4, 104, 'Spring 2023', 'A'),
+(5, 5, 105, 'Fall 2023', 'B'),
+(6, 6, 106, 'Spring 2023', 'A'),
+(7, 7, 107, 'Fall 2023', 'C'),
+(8, 8, 108, 'Spring 2023', 'D'),
+(9, 9, 109, 'Fall 2023', 'F'),
+(10, 10, 110, 'Spring 2023', 'A'),
+(11, 1, 103, 'Fall 2023', 'B'),
+(12, 2, 106, 'Spring 2023', 'A'),
+(13, 3, 107, 'Fall 2023', 'B'),
+(14, 4, 109, 'Spring 2023', 'C'),
+(15, 5, 110, 'Fall 2023', 'A');
+
+-- Insert data into Professors
+INSERT INTO Professors (ProfessorID, Name, Department, Email) VALUES
+(1, 'Dr. Smith', 'Mathematics', 'smith@example.com'),
+(2, 'Dr. Johnson', 'Physics', 'johnson@example.com'),
+(3, 'Dr. Williams', 'Computer Science', 'williams@example.com'),
+(4, 'Dr. Brown', 'History', 'brown@example.com'),
+(5, 'Dr. Davis', 'English', 'davis@example.com'),
+(6, 'Dr. Wilson', 'Data Science', 'wilson@example.com'),
+(7, 'Dr. Lee', 'Software Engineering', 'lee@example.com'),
+(8, 'Dr. Martinez', 'AI', 'martinez@example.com'),
+(9, 'Dr. Taylor', 'Cyber Security', 'taylor@example.com'),
+(10, 'Dr. White', 'Web Development', 'white@example.com');
+
+-- Insert data into Assignments
+INSERT INTO Assignments (AssignmentID, CourseID, AssignmentName, DueDate) VALUES
+(1, 101, 'Algebra Homework', '2023-09-10'),
+(2, 102, 'Physics Lab Report', '2023-09-15'),
+(3, 103, 'Programming Assignment 1', '2023-09-20'),
+(4, 104, 'History Essay', '2023-09-25'),
+(5, 105, 'Literature Analysis', '2023-09-30'),
+(6, 106, 'Data Science Project', '2023-10-05'),
+(7, 107, 'Software Design Document', '2023-10-10'),
+(8, 108, 'AI Model Implementation', '2023-10-15'),
+(9, 109, 'Cyber Security Report', '2023-10-20'),
+(10, 110, 'Web Development Project', '2023-10-25'),
+(11, 103, 'Database Assignment', '2023-09-22'),
+(12, 106, 'ML Model Evaluation', '2023-10-07'),
+(13, 107, 'API Development', '2023-10-12'),
+(14, 109, 'Ethical Hacking Report', '2023-10-23'),
+(15, 110, 'React Project', '2023-10-28');
+
+-- Insert data into Submissions
+INSERT INTO Submissions (SubmissionID, AssignmentID, StudentID, SubmissionDate, Score) VALUES
+(1, 1, 1, '2023-09-09', 85),
+(2, 2, 2, '2023-09-14', 78),
+(3, 3, 3, '2023-09-21', 92),
+(4, 4, 4, '2023-09-24', 88),
+(5, 5, 5, '2023-09-29', 75),
+(6, 6, 6, '2023-10-04', 90),
+(7, 7, 7, '2023-10-09', 82),
+(8, 8, 8, '2023-10-14', 79),
+(9, 9, 9, '2023-10-19', 60),
+(10, 10, 10, '2023-10-24', 95),
+(11, 3, 1, '2023-09-21', 80),
+(12, 6, 2, '2023-10-06', 85),
+(13, 7, 3, '2023-10-11', 77),
+(14, 9, 4, '2023-10-22', 83),
+(15, 10, 5, '2023-10-27', 90);
+
 ```
 
 ---
