@@ -1,4 +1,4 @@
-# brake-the-quarrie
+# Break-The-Query
 
 # SQLite Query Challenges
 
