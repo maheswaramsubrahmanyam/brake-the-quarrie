@@ -163,12 +163,14 @@ INSERT INTO Submissions (SubmissionID, AssignmentID, StudentID, SubmissionDate, 
 -- Query 2
 ```
 
-3. **List professors who have at least one student enrolled in a course they are teaching.**
+3. **Retrieve the names of students who have enrolled in the "Computer Science" course and have scored more than 80 in any of their submissions.**
+**🔹 Hint: You need to join the Students, Enrollments, Courses, and Submissions tables.**
 ```sql
 -- Query 3
 ```
 
-4. **Find students who submitted assignments after the due date more than twice.**
+4. **Find the professor names who teach courses in which at least one student has received a grade of 'A' in any semester.**
+**🔹 Hint: You need to join the Professors, Courses, and Enrollments tables.**
 ```sql
 -- Query 4
 ```
