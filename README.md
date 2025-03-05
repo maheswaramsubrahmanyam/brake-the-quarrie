@@ -194,8 +194,7 @@ This document contains **incorrect SQL queries** along with their **mistakes**. 
 ```sql
 SELECT s.StudentID, s.Name
 FROM Students s
-JOIN Enrollments e ON s.StudentID = e.StudentID
-WHERE s.StudentID NOT IN (
+ (
     SELECT StudentID FROM Submissions
 );
 ```
@@ -204,7 +203,7 @@ WHERE s.StudentID NOT IN (
 ```sql
 SELECT s.Name, COUNT(sub.SubmissionID) AS LateSubmissions
 FROM Students s
-JOIN Submissions sub ON s.StudentID = sub.StudentID
+JOIN  sub.StudentID
 JOIN Assignments a ON sub.AssignmentID = a.AssignmentID
 WHERE sub.SubmissionDate > a.DueDate
 HAVING LateSubmissions > 2;
@@ -213,8 +212,8 @@ HAVING LateSubmissions > 2;
 8. **6️⃣ Retrieve the GPA of each student who has an average grade greater than 3.0.**  
 ```sql
 SELECT Name, AVG(Grade) AS GPA  
-FROM Students s
-JOIN Enrollments e ON s.StudentID = e.StudentID
+FROM Students 
+JOIN e.StudentID
 HAVING GPA > 3.0;
 ```
 # 📌 Industry-Level Complex SQL Question
@@ -239,9 +238,7 @@ SELECT
     s.Name AS StudentName, 
     c.CourseName, 
     p.Name AS ProfessorName, 
-    COALESCE(sub.SubmissionDate, 'No Submission') AS LatestSubmissionDate, 
-    COALESCE(sub.Score, 'No Submission') AS LatestScore
-FROM Students s
+    
 LEFT JOIN Enrollments e ON s.StudentID = e.StudentID
 RIGHT JOIN Courses c ON e.CourseID = c.CourseID
 LEFT JOIN Professors p ON c.CourseID = p.ProfessorID
